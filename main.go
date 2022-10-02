@@ -1,8 +1,7 @@
 package main
 
 import (
-	"myapp/env"
-	"myapp/strings"
+	"myapp/generics"
 )
 
 type Test struct {
@@ -59,8 +58,10 @@ func main() {
 	//di.TddDiMain()
 	//di.TddMockMain()
 	//swagger.Test()
-	env.Test()
-	strings.Test()
+	//env.Test()
+	//strings.Test()
+	//Pointers.Test()
+	generics.Test()
 }
 
 //func (i int)Test1()  {
@@ -71,15 +72,3 @@ func main() {
 //func (i integer)Test1()  {
 //	fmt.Println("組み込み型はメソッドを持てない")
 //}
-
-func NewTest(title string, page int) *Test {
-	return &Test{
-		Title: title,
-		Page:  page,
-	}
-}
-
-// 1
-// 2
-// 3
-// 4

@@ -72,6 +72,17 @@ func (s String) Warning() {
 	fmt.Println("String!")
 }
 
+// 参照型を持つ構造体
+type Slicer struct {
+	item []int
+}
+
+// 値レシーバー
+// 構造体のフィールドの値は変わらないことが想定されるが、、、？
+func (s Slicer) changeSlicer() {
+	s.item = []int{3, 3, 3}
+}
+
 func Test() {
 	//m := Machine{}
 
@@ -115,4 +126,25 @@ func Test() {
 	cat := Cat{}
 	cat.Cry("にゃー")
 
+	// 参照型を持つ構造体
+	s2 := Slicer{item: []int{0}}
+	fmt.Println(s2)
+
+	s2.item = []int{0, 0, 0}
+	fmt.Println(s2)
+
+	fmt.Println("changeSlicer()")
+	s2.changeSlicer()
+	fmt.Println(s2)
+
+	s2Pointer := &s2
+	fmt.Println(s2Pointer)
+
+	s2Pointer.item = []int{1, 2, 3}
+	fmt.Println(s2Pointer)
+	fmt.Println(s2)
+
+	// 参照型の構造体を最初からポインタ型で初期化をする
+	s3 := &Slicer{}
+	fmt.Println(s3)
 }
