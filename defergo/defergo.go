@@ -1,0 +1,5 @@
+package defergo
+
+func Test() {
+
+}

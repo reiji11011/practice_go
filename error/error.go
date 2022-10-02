@@ -1,0 +1,4 @@
+package err
+
+func Test() {
+}
